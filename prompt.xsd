@@ -1,0 +1,25 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="https://static.elliotjreed.com" xmlns="https://static.elliotjreed.com" elementFormDefault="qualified">
+  <xs:element name="prompt">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="context" type="xs:string"/>
+        <xs:element name="instructions" type="xs:string"/>
+        <xs:element name="user_input" type="xs:string"/>
+        <xs:element name="examples">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="example" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="example_prompt" type="xs:string"/>
+                    <xs:element name="example_response" type="xs:string"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
